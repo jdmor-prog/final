@@ -19,6 +19,40 @@ El objetivo principal es aplicar buenas prácticas de desarrollo web sin framewo
 
 ---
 
-## 📂 Estructura del Proyecto
+## Pasos de Instalación
 
-El proyecto está organizado en las siguientes carpetas para mantener una clara separación de responsabilidades:
+Para ejecutar este proyecto en tu entorno local, sigue estos pasos:
+
+### 1. Prerrequisitos
+
+* Un servidor web local (XAMPP, WAMP, Laragon, etc.).
+* PHP 7.4 o superior.
+* MySQL o MariaDB.
+
+### 2. Instalación
+
+1.  **Clona el repositorio** en la carpeta `htdocs` (o `www`) de tu servidor local.
+    ```bash
+    git clone <https://github.com/jdmor-prog/final> final
+    ```
+
+2.  **Crea la Base de Datos:**
+    * Abre tu gestor de base de datos (por ejemplo, phpMyAdmin).
+    * Crea una nueva base de datos. Se recomienda usar el nombre `plataforma_cursos`, ya que es el que está configurado por defecto.
+    * Importa el archivo `database.sql` (que debes crear y añadir al proyecto) en la base de datos recién creada. Esto creará las tablas y algunos datos de prueba.
+
+3.  **Configura la Conexión:**
+    * Abre el archivo `config/Database.php`.
+    * Modifica las credenciales de conexión con tu usuario y contraseña de MySQL.
+    ```php
+    // ...
+    $host = 'localhost';
+    $dbname = 'plataforma_cursos'; // Asegúrate de que coincida con tu BD
+    $user = 'root';                // Tu usuario de MySQL
+    $pass = '';                    // Tu contraseña de MySQL
+    // ...
+    ```
+
+4.  **Ejecuta la Aplicación:**
+    * Inicia tu servidor Apache y MySQL desde el panel de control de XAMPP (o similar).
+    * Abre tu navegador web y ve a `http://localhost/final/`.
